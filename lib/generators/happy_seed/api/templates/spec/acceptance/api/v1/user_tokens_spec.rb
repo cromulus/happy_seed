@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource 'Token' do
-  let(:user) { FactoryGirl.create :user_with_token }
+  let(:user) { FactoryBot.create :user_with_token }
 
   post '/v1/token', format: :json do
     before { user.user_tokens.destroy }

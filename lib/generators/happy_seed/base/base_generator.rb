@@ -25,7 +25,7 @@ module HappySeed
           gem 'sqlite3'
           gem 'rspec', '~> 3.5.0'
           gem 'rspec-rails', '~> 3.5.0'
-          gem 'factory_girl_rails'
+          gem 'factory_bot_rails'
           gem 'capybara'
           gem 'guard-rspec', '~> 4.6.4', require: false
           gem 'database_cleaner'
@@ -64,7 +64,7 @@ module HappySeed
         # # Install cucumber
         # generate "cucumber:install"
 
-        # append_to_file "features/support/env.rb", "\nWorld(FactoryGirl::Syntax::Methods)\n"
+        # append_to_file "features/support/env.rb", "\nWorld(FactoryBot::Syntax::Methods)\n"
 
         # Install Guard
         run "guard init"
@@ -106,11 +106,11 @@ module HappySeed
         end
 
         begin
-          inject_into_file 'spec/rails_helper.rb', "\n  config.include FactoryGirl::Syntax::Methods\n", :before => "\nend\n"
+          inject_into_file 'spec/rails_helper.rb', "\n  config.include FactoryBot::Syntax::Methods\n", :before => "\nend\n"
           inject_into_file 'spec/rails_helper.rb', "\n  [:controller, :view, :request].each do |type|\n    config.include ::Rails::Controller::Testing::TestProcess, :type => type\n    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type\n    config.include ::Rails::Controller::Testing::Integration, :type => type\n  end", :before => "\nend\n"
           append_to_file 'spec/rails_helper.rb', "\nVCR.configure do |c|\n  c.cassette_library_dir  = Rails.root.join('spec', 'vcr')\n  c.hook_into :webmock\nend\n"
         rescue
-          say_status :spec, "Unable to add factory girl and VCR to rails_helper.rb", :red
+          say_status :spec, "Unable to add factory bot and VCR to rails_helper.rb", :red
         end
 
         begin

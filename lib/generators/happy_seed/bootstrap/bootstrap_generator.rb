@@ -43,7 +43,7 @@ HAML
     config.generators do |g|
       g.stylesheets = false
       g.scaffold_controller "scaffold_controller"
-      g.test_framework :rspec, fixture: true, fixture_replacement: :factory_girl, helper_specs: false, view_specs: false, routing_specs: false, controller_specs: false
+      g.test_framework :rspec, fixture: true, fixture_replacement: :factory_bot, helper_specs: false, view_specs: false, routing_specs: false, controller_specs: false
     end
   
 RUBY

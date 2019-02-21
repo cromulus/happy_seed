@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource 'User' do
-  let(:user) { FactoryGirl.build :user_with_token }
+  let(:user) { FactoryBot.build :user_with_token }
 
   post '/v1/users', format: :json do
     parameter :email, 'Email', required: true, scope: :user

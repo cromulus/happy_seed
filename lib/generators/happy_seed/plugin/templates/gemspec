@@ -5,4 +5,4 @@
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "rspec-autotest"
   s.add_development_dependency "autotest-rails"
-  s.add_development_dependency 'factory_girl_rails'
+  s.add_development_dependency 'factory_bot_rails'
