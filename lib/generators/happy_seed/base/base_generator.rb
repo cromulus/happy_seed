@@ -20,6 +20,7 @@ module HappySeed
         gem 'puma'
         gem 'rails_12factor'
         gem 'haml-rails'
+        gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
         gem_group :development, :test do
           gem 'sqlite3'
