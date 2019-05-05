@@ -11,7 +11,7 @@ gemspec
 # your gem to rubygems.org.
 
 group :development, :test do
-  gem 'factory_bot_rails'
+  gem 'factory_bot'
   gem 'faker'
   gem 'hash_syntax', require: false
   # To use a debugger
